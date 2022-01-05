@@ -1,0 +1,5 @@
+<%= form_with model: @group do |f| %>
+  <%= f.text_field :name, placeholder: 'Name' %><br><br>
+  <%= f.text_field :icon, placeholder: 'Icon' %><br><br>
+  <%= f.submit 'Create group' %><br><br>
+<% end %>

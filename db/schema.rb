@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_01_04_235715) do
   enable_extension "plpgsql"
 
   create_table "entities", force: :cascade do |t|
-    t.bigint "author_id"
+    t.bigint "author_id", null: false
     t.string "name"
     t.decimal "amount"
     t.datetime "created_at", precision: 6, null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2022_01_04_235715) do
   end
 
   create_table "groups", force: :cascade do |t|
-    t.bigint "author_id"
+    t.bigint "author_id", null: false
     t.string "name"
     t.string "icon"
     t.datetime "created_at", precision: 6, null: false

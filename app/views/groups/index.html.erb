@@ -2,3 +2,11 @@
 <p>
   A list of groups will be generated here.
 </p>
+<ul>
+  <% @groups.each do |group| %>
+    <li>
+      <h2><%= group.name %></h2>
+      <p><%= group.icon %></p>
+    </li>
+  <% end %>
+</ul>
