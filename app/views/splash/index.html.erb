@@ -1,1 +1,9 @@
 <h1>This is the splash page</h1>
+<% if user_signed_in? %>
+  <h2>Welcome, <%= current_user.name %></h2>
+  <p>You are signed in.</p>
+  <p><%= link_to 'Go to categories', groups_path %></p>
+<% else %>
+  <p><%= link_to 'Log in', user_session_path %></p>
+  <p><%= link_to 'Sign up', new_user_registration_path %></p>
+<% end %>
