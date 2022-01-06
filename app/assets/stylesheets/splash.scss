@@ -12,6 +12,7 @@
 
 body {
   position: relative;
+  background-color: $main-background;
   min-height: calc(100vh - 350px);
   padding-bottom: 350px;
 }
@@ -23,7 +24,8 @@ h2 {
   color: $dark-text;
 }
 
-p {
+p,
+span {
   @include regular-text;
 }
 
@@ -58,8 +60,9 @@ p {
   padding-top: 30vh;
 }
 
+.splash-welcome,
 .splash-text {
-  margin-top: 10px;
+  margin: 30px 5%;
 }
 
 .button-container {
@@ -69,10 +72,11 @@ p {
   margin: 20px 5% -1px 5%;
 }
 
-.main-button {
+.main-button,
+.second-button,
+.delete-button {
   @include regular-text;
 
-  background-color: $light-main;
   font-size: 20px;
   color: white;
   width: 100%;
@@ -82,13 +86,21 @@ p {
   margin: 20px 0;
 }
 
+.main-button {
+  background-color: $light-main;
+}
+
 .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(0deg, $dark-main, $light-main);
-  height: 60px;
+  height: 75px;
   margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 30px;
 }
 
 .page-title,
@@ -97,12 +109,13 @@ p {
   color: white;
 }
 
-.back-arrow {
-  padding-left: 5%;
+.page-title {
+  text-align: center;
+  font-size: 25px;
 }
 
-form {
-  margin-bottom: 30px;
+.back-arrow {
+  padding-left: 5%;
 }
 
 .header-link {
@@ -111,18 +124,22 @@ form {
   background: none;
   border: none;
   margin-right: 5%;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .field {
   width: 90%;
   height: 50px;
-  margin: 0 5%;
   border-bottom: 1px solid $medium-text;
 
   input {
     width: 100%;
     height: 50px;
-    padding-left: 10px;
+    padding: 0 5%;
     border: none;
   }
 }

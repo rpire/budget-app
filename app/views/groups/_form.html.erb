@@ -1,5 +1,13 @@
 <%= form_with model: @group do |f| %>
-  <%= f.text_field :name, placeholder: 'Name' %><br><br>
-  <%= f.text_field :icon, placeholder: 'Icon' %><br><br>
-  <%= f.submit 'Create group' %><br><br>
+  <div class="field">
+    <%= f.text_field :name, placeholder: 'Name' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :icon, placeholder: 'Icon URL' %>
+  </div>
+
+  <div class="button-container">
+    <%= f.submit 'Create category',class: 'second-button' %>
+  </div>
 <% end %>

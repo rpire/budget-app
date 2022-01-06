@@ -1,3 +1,83 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import 'colors';
+@import 'mixins';
+
+.groups-list-item,
+.entity-info,
+.entity-amount {
+  background-color: $second-background;
+  width: 90%;
+
+  h2 {
+    font-size: 22px;
+  }
+
+  a,
+  span {
+    text-decoration: none;
+    color: $medium-text;
+  }
+
+  span {
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  a:hover,
+  a:active {
+    text-decoration: underline;
+  }
+}
+
+.entities-list-item {
+  margin-bottom: 20px;
+}
+
+.groups-list-item,
+.entity-amount {
+  @include default-flex;
+}
+
+.entity-info,
+.entity-amount {
+  margin: 0 5%;
+
+  h2,
+  p,
+  span {
+    margin: 0 10px;
+  }
+}
+
+.groups-list-item {
+  height: 100px;
+  margin: 10px 5%;
+
+  img {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+  }
+}
+
+.entity-info {
+  height: 65px;
+  border-bottom: 1px solid $medium-text;
+}
+
+.entity-amount {
+  height: 40px;
+}
+
+.amount {
+  @include headings;
+
+  color: $dark-main;
+}
+
+.second-button {
+  background-color: $second;
+}

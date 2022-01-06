@@ -1,13 +1,38 @@
-<h1><%= @group.name %> Transactions</h1>
-<p>
-  You will be able to see a list of transactions for a group here.
-</p>
-<ul>
-  <% @group_entities.each do |group_entity| %>
-    <li>
-      <h2><%= group_entity.entity.name %></h2>
-      <p>$<%= group_entity.entity.amount %></p>
-    </li>
-  <% end %>
-</ul>
-<%= link_to 'New transaction', new_entity_path %>
+<header class="app-header">
+  <%= link_to fa_icon('arrow-left'), groups_path, class: 'back-arrow' %>
+
+  <h1 class="page-title">TRANSACTIONS</h1>
+
+  <p class="header-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
+</header>
+
+<section class="groups-list-item">
+  <img src="<%= @group.icon %>" alt="Category icon image">
+  <h2><%= link_to @group.name, group_path(@group.id) %></h2>
+  <% total = 0.00 %>
+  <% @group.group_entities.each {|group_entity| total += group_entity.entity.amount} %>
+  <span class="amount">$<%= total %></span>
+</section>
+
+<% if @group_entities.empty? %>
+  <h2 class="splash-welcome">There are not transactions yet!</h2>
+  <p class="splash-text">Create a transaction for this category by clicking on the button below.</p>
+<% else %>
+  <ul>
+    <% @group_entities.each do |group_entity| %>
+      <li class="entities-list-item">
+        <div class="entity-info">
+          <h2><%= link_to group_entity.entity.name, entity_path(group_entity.entity_id) %></h2>
+          <p><%= group_entity.entity.created_at %></p>
+        </div>
+        <div class="entity-amount">
+          <span>Amount:</span>
+          <span class="amount">$<%= group_entity.entity.amount %></span>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<div class="button-container">
+  <%= button_to 'New transaction', new_entity_path, method: :get, class: 'second-button' %>
+</div>
