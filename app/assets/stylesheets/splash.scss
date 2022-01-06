@@ -149,12 +149,25 @@ form {
 
   display: flex;
   align-items: center;
-  height: 50px;
-  margin: 10px 5%;
+  background-color: $second-background;
+  height: 75px;
 
   input {
     margin-left: 30px;
     width: 30px;
     height: 30px;
+  }
+
+  label {
+    font-size: 18px;
+    color: $medium-text;
+    margin: 0 30px 0 5%;
+  }
+
+  select {
+    background-color: transparent;
+    font-size: 18px;
+    height: 30px;
+    border-radius: 5px;
   }
 }

@@ -1,5 +1,9 @@
-<h1>New Transaction</h1>
-<p>
-  You will be able to add new transactions in this page.
-</p>
+<header class="app-header">
+  <%= link_to fa_icon('arrow-left'), :back, class: 'back-arrow' %>
+
+  <h1 class="page-title">TRANSACTIONS</h1>
+
+  <p class="header-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
+</header>
+
 <%= render 'form' %>

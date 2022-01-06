@@ -5,10 +5,6 @@ class EntitiesController < ApplicationController
     @entity = Entity.new
   end
 
-  def show
-    @entity = Entity.find(params[:id])
-  end
-
   def create
     @entity = current_user.entities.new(entity_params)
 

@@ -22,7 +22,7 @@
     <% @group_entities.each do |group_entity| %>
       <li class="entities-list-item">
         <div class="entity-info">
-          <h2><%= link_to group_entity.entity.name, entity_path(group_entity.entity_id) %></h2>
+          <h2><%= group_entity.entity.name %></h2>
           <p><%= group_entity.entity.created_at %></p>
         </div>
         <div class="entity-amount">
