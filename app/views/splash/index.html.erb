@@ -1,9 +1,12 @@
-<h1>This is the splash page</h1>
-<% if user_signed_in? %>
-  <h2>Welcome, <%= current_user.name %></h2>
-  <p>You are signed in.</p>
-  <p><%= link_to 'Go to categories', groups_path %></p>
-<% else %>
-  <p><%= link_to 'Log in', user_session_path %></p>
-  <p><%= link_to 'Sign up', new_user_registration_path %></p>
-<% end %>
+<h1 class="splash-header">Paytrack</h1>
+<div class="button-container">
+  <% if user_signed_in? %>
+    <h2 class="splash-welcome">Welcome, <%= current_user.name %></h2>
+    <p class="splash-text">You are signed in.</p>
+    <%= button_to 'Go to categories', groups_path, method: :get, class: 'main-button' %>
+    <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'main-button' %>
+  <% else %>
+    <%= button_to 'Log in', user_session_path, class: 'main-button' %>
+    <%= button_to 'Sign up', new_user_registration_path, method: :get, class: 'main-button' %>
+  <% end %>
+</div>

@@ -1,0 +1,6 @@
+<%= form_with model: @entity do |f| %>
+  <%= f.text_field :name, placeholder: 'Name' %><br><br>
+  <%= f.number_field :amount, placeholder: 'Amount (USD)' %><br><br>
+  <%= f.collection_select :group_id, current_user.groups, :id, :name %>
+  <%= f.submit 'Create transaction' %><br><br>
+<% end %>

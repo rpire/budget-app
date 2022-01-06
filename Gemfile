@@ -9,6 +9,8 @@ gem 'rubocop'
 gem 'devise'
 # Use CanCanCan for authorization
 gem 'cancancan'
+# Use Font Awesome icons
+gem 'font-awesome-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 # Use postgresql as the database for Active Record

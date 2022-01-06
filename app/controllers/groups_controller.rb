@@ -9,7 +9,10 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
-  def show; end
+  def show
+    @group = Group.find(params[:id])
+    @group_entities = GroupEntity.includes(:group, :entity).where(group_id: params[:id])
+  end
 
   def create
     @group = current_user.groups.new(group_params)

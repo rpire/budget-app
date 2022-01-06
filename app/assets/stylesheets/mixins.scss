@@ -1,0 +1,11 @@
+@mixin regular-text {
+  font-family: montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@mixin headings {
+  font-family: montserrat, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}

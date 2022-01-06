@@ -1,4 +1,13 @@
-<h1>Group</h1>
+<h1><%= @group.name %> Transactions</h1>
 <p>
   You will be able to see a list of transactions for a group here.
 </p>
+<ul>
+  <% @group_entities.each do |group_entity| %>
+    <li>
+      <h2><%= group_entity.entity.name %></h2>
+      <p>$<%= group_entity.entity.amount %></p>
+    </li>
+  <% end %>
+</ul>
+<%= link_to 'New transaction', new_entity_path %>

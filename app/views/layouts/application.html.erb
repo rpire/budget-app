@@ -8,16 +8,12 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.typekit.net/lrt1zlc.css">
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <footer>
-      <% if user_signed_in? %>
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete  %>
-      <% end %>
-    </footer>
   </body>
 </html>

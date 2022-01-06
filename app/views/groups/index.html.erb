@@ -7,6 +7,8 @@
     <li>
       <h2><%= group.name %></h2>
       <p><%= group.icon %></p>
+      <%= link_to 'Details', group_path(group.id) %>
     </li>
   <% end %>
 </ul>
+<%= link_to 'New Category', new_group_path %>
