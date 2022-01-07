@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :rememberable, :validatable
   has_many :groups, foreign_key: 'author_id'
   has_many :entities, foreign_key: 'author_id'
+
+  validates :name, presence: true
 end
