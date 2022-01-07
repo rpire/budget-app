@@ -13,11 +13,11 @@
 
   h2 {
     font-size: 22px;
+    color: $medium-text;
   }
 
   a,
   span {
-    text-decoration: none;
     color: $medium-text;
   }
 
@@ -28,12 +28,18 @@
 
   a:hover,
   a:active {
-    text-decoration: underline;
+    color: $light-main;
   }
 }
 
 .entities-list-item {
   margin-bottom: 20px;
+}
+
+.group-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .groups-list-item,
@@ -66,10 +72,6 @@
 .entity-info {
   height: 65px;
   border-bottom: 1px solid $medium-text;
-
-  h2 {
-    color: $medium-text;
-  }
 }
 
 .entity-amount {

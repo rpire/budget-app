@@ -8,7 +8,7 @@
 
 <section class="groups-list-item">
   <img src="<%= @group.icon %>" alt="Category icon image">
-  <h2><%= link_to @group.name, group_path(@group.id) %></h2>
+  <h2><%= @group.name %></h2>
   <% total = 0.00 %>
   <% @group.group_entities.each {|group_entity| total += group_entity.entity.amount} %>
   <span class="amount">$<%= total %></span>
