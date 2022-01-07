@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @group_entities = GroupEntity.includes(:group, :entity).where(group_id: params[:id])
+    @group_entities = GroupEntity.includes(:group, :entity).where(group_id: params[:id]).order(created_at: :desc)
   end
 
   def create
