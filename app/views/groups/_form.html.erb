@@ -1,0 +1,13 @@
+<%= form_with model: @group do |f| %>
+  <div class="field">
+    <%= f.text_field :name, placeholder: 'Name' %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :icon, placeholder: 'Icon URL' %>
+  </div>
+
+  <div class="button-container">
+    <%= f.submit 'Create category',class: 'second-button' %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<header class="app-header">
+  <%= link_to fa_icon('arrow-left'), root_path, class: 'back-arrow' %>
+
+  <h1 class="page-title">CATEGORIES</h1>
+
+  <p class="header-link"><%= link_to "Log out", destroy_user_session_path, method: :delete %></p>
+</header>
+<% if @groups.empty? %>
+  <h2 class="splash-welcome">There are not categories yet!</h2>
+  <p class="splash-text">Create your first category by clicking on the button below.</p>
+<% else %>
+  <ul class="groups-list">
+    <% @groups.each do |group| %>
+      <li class="groups-list-item">
+        <img src="<%= group.icon %>" alt="Category icon image">
+        <div class="group-info">
+          <h2><%= group.name %></h2>
+          <p><%= link_to 'View transactions', group_path(group.id) %></p>
+        </div>
+        <% total = 0.00 %>
+        <% group.group_entities.each {|group_entity| total += group_entity.entity.amount} %>
+        <span class="amount">$<%= total %></span>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<div class="button-container">
+  <%= button_to 'New Category', new_group_path, method: :get, class: 'second-button' %>
+</div>
